@@ -13,7 +13,7 @@ def clockout():
 	clocked = now - lastin
 	intime = time.asctime(time.gmtime(lastin))
 	outtime = time.asctime(time.gmtime(now))
-	with open('mytime.csv', 'ab') as csvfile:
+	with open('mytime.csv', 'a') as csvfile:
 		timewriter = csv.writer(csvfile, quotechar='"', quoting=csv.QUOTE_ALL)
 		timewriter.writerow([intime, outtime, clocked, e1.get()])
 
